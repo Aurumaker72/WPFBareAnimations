@@ -45,16 +45,8 @@ namespace WPFBareAnimations
                 KeyTime = KeyTime.FromTimeSpan(duration),
                 Value = (bool)(e.NewValue) ? Visibility.Visible : Visibility.Collapsed
             });
-
-            var hostStoryboard = new Storyboard()
-            {
-                Children = new TimelineCollection(new Timeline[] { opacityAnimation, visibilityAnimation })
-            };
-            Storyboard.SetTarget(opacityAnimation, target);
-            Storyboard.SetTarget(visibilityAnimation, target);
-            Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath(UIElement.OpacityProperty));
-            Storyboard.SetTargetProperty(visibilityAnimation, new PropertyPath(UIElement.VisibilityProperty));
-            hostStoryboard.Begin();
+            ((FrameworkElement)d).BeginAnimation(UIElement.OpacityProperty, opacityAnimation, HandoffBehavior.SnapshotAndReplace);
+            ((FrameworkElement)d).BeginAnimation(UIElement.VisibilityProperty, visibilityAnimation, HandoffBehavior.SnapshotAndReplace);
         }
 
     }

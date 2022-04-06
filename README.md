@@ -15,5 +15,6 @@ Simple class library for trivially animating WPF controls
 ### You're done!
  
 # Usage
-```            <Button Content="Hello!" bareanimations:OpacityTransition.ShouldBeShown="{Binding YourBooleanProperty, UpdateSourceTrigger=PropertyChanged}" bareanimations:OpacityTransition.AnimationDuration="00:00:0.5"/>
+```            
+<Button Content="Hello!" bareanimations:OpacityTransition.ShouldBeShown="{Binding YourBooleanProperty, UpdateSourceTrigger=PropertyChanged}" bareanimations:OpacityTransition.AnimationDuration="00:00:0.5"/>
 ```
